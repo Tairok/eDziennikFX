@@ -8,6 +8,7 @@ module com.example.demo {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
+    requires mysql.connector.j;
 
     opens eDziennikFX to javafx.fxml;
     exports eDziennikFX;
