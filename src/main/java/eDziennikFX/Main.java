@@ -19,21 +19,9 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
 
+        Config.clearDB();
+        Config.fillDB();
 
-        //custom
-        /*
-        List<Object[]> test =  Query.select("SELECT * FROM school_db.users_tbl;");
-        for(Object[] ob : test)
-        {
-            for(Object o : ob) System.out.print(o+" ");
-            System.out.println();
-        }*/
-
-        String[] cols={"first_name","last_name","role","login","password"};
-        Object[] values ={"test","test","test","test","test"};
-        //System.out.println(Query.insert("users_tbl",cols,values));
-        //Query.update("users_tbl",cols,values,"id_user=3");
-        Query.delete("users_tbl");
     }
 
     public static void main(String[] args) {
