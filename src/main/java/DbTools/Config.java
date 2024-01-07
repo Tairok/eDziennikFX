@@ -3,7 +3,7 @@ import java.sql.SQLException;
 
 public class Config extends Query{
     /**
-     * Network path to database
+     * URL path to database
      */
     public static final String DB_URL = "jdbc:mysql://localhost:3306/school_db";
 
@@ -18,6 +18,10 @@ public class Config extends Query{
      */
     public static final String DB_PASSWORD = "zaq1@WSX";
 
+    /**
+     * create structure of database
+     *
+     */
 
     /**
      * Fill whole database with sample data

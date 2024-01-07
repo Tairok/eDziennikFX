@@ -10,6 +10,7 @@ module com.example.demo {
     requires java.sql;
     requires mysql.connector.j;
 
+
     opens eDziennikFX to javafx.fxml;
     exports eDziennikFX;
     exports DbTools;
