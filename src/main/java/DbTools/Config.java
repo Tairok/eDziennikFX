@@ -18,6 +18,12 @@ public class Config extends Query{
      */
     public static final String DB_PASSWORD = "zaq1@WSX";
 
+    //TODO create whole db
+    public static void createDB()
+    {
+
+    }
+
     /**
      * create structure of database
      *

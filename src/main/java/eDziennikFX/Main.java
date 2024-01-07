@@ -17,7 +17,8 @@ public class Main extends Application {
         try
         {
             Config.clearDB(); //clear whole db!, drop all tables !!!!
-            Config.fillDB();//fill db with sample data
+
+            Config.fillDB(); //fill db with sample data
         }
         catch (SQLException e) {e.printStackTrace();}
 

@@ -15,4 +15,6 @@ module com.example.demo {
     exports eDziennikFX;
     exports DbTools;
     opens DbTools to javafx.fxml;
+    exports DbTools.ClassTools;
+    opens DbTools.ClassTools to javafx.fxml;
 }

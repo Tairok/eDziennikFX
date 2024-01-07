@@ -1,4 +1,6 @@
-package DbTools;
+package DbTools.ClassTools;
+
+import DbTools.Config;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -82,10 +84,11 @@ public class QueryTools {
         return qr.toString();
     }
 
+    //TODO create tables with columns
     protected static String createBuilder(String type,String name)
     {
-        if(type.equals("table")) return "CREATE TABLE '"+name+"';";
-        else if(type.equals("db")) return "CREATE DATABASE '"+name+"';";
+        if(type.equals("table")) return "CREATE OR REPLACE TABLE '"+name+"';";
+        else if(type.equals("db")) return "CREATE OR REPLACE DATABASE '"+name+"';";
         else return null;
     }
 
