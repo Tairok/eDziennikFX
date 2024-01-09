@@ -14,13 +14,16 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 
 
+        Server server = new Server(7245);
         try
         {
             Config.clearDB(); //clear whole db!, drop all tables !!!!
 
             Config.fillDB(); //fill db with sample data
         }
-        catch (SQLException e) {e.printStackTrace();}
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
 
 
         launch(args);

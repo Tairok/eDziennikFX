@@ -1,17 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="eDziennikFX:jar" />
+      <artifact name="eDziennikFX:jar2" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e5db624-ad7d-4e74-8d18-815b17df4b10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/eDziennikFX_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/eDziennikFX_jar2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/17.0.6/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/17.0.6/javafx-base-17.0.6-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/17.0.6/javafx-base-17.0.6-win.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/21/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/21/javafx-base-21-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/21/javafx-base-21-win.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/21/javafx-base-21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/21/javafx-base-21.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/21/javafx-base-21.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-base/21/javafx-base-21.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/17.0.6/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6-win.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/21/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/21/javafx-controls-21-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/21/javafx-controls-21-win.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/21/javafx-controls-21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/21/javafx-controls-21.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/21/javafx-controls-21.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-controls/21/javafx-controls-21.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/17.0.6/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-win.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/21/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/21/javafx-fxml-21-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/21/javafx-fxml-21-win.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/21/javafx-fxml-21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/21/javafx-fxml-21.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/21/javafx-fxml-21.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-fxml/21/javafx-fxml-21.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/17.0.6/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-win.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/21/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/21/javafx-graphics-21-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/21/javafx-graphics-21-win.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/21/javafx-graphics-21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/21/javafx-graphics-21.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/21/javafx-graphics-21.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-graphics/21/javafx-graphics-21.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-maven-plugin/0.0.8/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-maven-plugin/0.0.8/javafx-maven-plugin-0.0.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-maven-plugin/0.0.8/javafx-maven-plugin-0.0.8.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-maven-plugin/0.0.8/javafx-maven-plugin-0.0.8.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-maven-plugin/0.0.8/javafx-maven-plugin-0.0.8.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-media/17.0.6/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-media/17.0.6/javafx-media-17.0.6-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-media/17.0.6/javafx-media-17.0.6-win.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-media/17.0.6/javafx-media-17.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-media/17.0.6/javafx-media-17.0.6.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-media/17.0.6/javafx-media-17.0.6.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-media/17.0.6/javafx-media-17.0.6.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-web/17.0.6/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-web/17.0.6/javafx-web-17.0.6-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-web/17.0.6/javafx-web-17.0.6-win.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-web/17.0.6/javafx-web-17.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-web/17.0.6/javafx-web-17.0.6.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-web/17.0.6/javafx-web-17.0.6.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx-web/17.0.6/javafx-web-17.0.6.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx/17.0.6/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx/17.0.6/javafx-17.0.6.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx/17.0.6/javafx-17.0.6.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx/21/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx/21/javafx-21.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/openjfx/javafx/21/javafx-21.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/ConnectionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/NetworkTools/Packet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/NetworkTools/PacketType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/eDziennikFX/ClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/eDziennikFX/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql-connector-j-8.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DbTools/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DbTools/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DbTools/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DbTools/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DbTools/QueryTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DbTools/ClassTools/QueryTools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eDziennikFX/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eDziennikFX/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +113,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -40,7 +133,7 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2aX3z0ZeA4tLuQt1C1HoPoRGey6" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -50,19 +143,36 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Client.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Server.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "gui-dbTools",
-    "last_opened_file_path": "C:/Users/user/Documents/GitHub/eDziennikFX/libs",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.49310344"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Materialy/studia_2/Semestr3/PO2/eDziennikFX/libs/mysql-connector-j-8.2.0.jar",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.49310344",
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Server">
+    <configuration name="Client" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="Client.Main" />
+      <module name="eDziennikFX" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="eDziennikFX.Main" />
-      <module name="eDziennik" />
+      <module name="eDziennikFX" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="eDziennikFX.*" />
@@ -73,11 +183,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="eDziennikFX" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="eDziennikFX" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Server" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -92,5 +226,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/eDziennikFX$Server.ic" NAME="Server Coverage Results" MODIFIED="1704822150960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eDziennikFX.*</FILTER>
+    </SUITE>
   </component>
 </project>
