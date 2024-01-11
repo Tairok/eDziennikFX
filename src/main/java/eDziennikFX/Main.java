@@ -14,7 +14,7 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 
 
-        Server server = new Server(7245);
+        //Server server = new Server(7245);
         try
         {
             Config.clearDB(); //clear whole db!, drop all tables !!!!
