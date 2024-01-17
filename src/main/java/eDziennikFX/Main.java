@@ -1,6 +1,6 @@
 package eDziennikFX;
 
-import Gui.LoginForm;
+import Gui.GuiForm;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -34,7 +34,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
 
         //create gui
-        LoginForm form = new LoginForm(stage);
+        GuiForm form = new GuiForm(stage);
 
     }
 }

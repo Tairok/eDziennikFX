@@ -55,7 +55,13 @@ public class Config extends Query{
         values= new Object[]{"Jane", "Smith", "jane_smith", "securepass", "teacher", 2};
         insert("users_tbl",columns,values);
 
-        values= new Object[]{"Admin", "Adminson", "admin", "adminpass", "admin", 1};
+        values= new Object[]{"Admin", "Adminson", "admin", "admin", "admin", 1};
+        insert("users_tbl",columns,values);
+
+        values= new Object[]{"Teacher", "Teacherson", "teacher", "teacher", "teacher", 2};
+        insert("users_tbl",columns,values);
+
+        values = new Object[]{"Student", "Studentson", "student", "student", "student", 1};
         insert("users_tbl",columns,values);
 
         //Insert sample data into grades_tbl

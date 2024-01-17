@@ -9,6 +9,7 @@ public class User {
         List<Object[]> LoginTab = Query.select(
                 "SELECT login FROM users_tbl WHERE login='"+login+"' && password='"+password+"';"
         );
+        System.out.println(LoginTab);
         return LoginTab != null;
     }
 
