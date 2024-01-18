@@ -1,6 +1,6 @@
 package DbTools.ClassTools;
 
-import DbTools.Config;
+import eDziennikFX.Config;
 
 import java.sql.*;
 import java.util.ArrayList;

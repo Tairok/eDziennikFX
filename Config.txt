@@ -1,0 +1,4 @@
+Database.url=jdbc:mysql://localhost:3306/school_db
+Database.username=root
+Database.password=zaq1@WSX
+Server.app.port=7245

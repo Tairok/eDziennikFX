@@ -18,10 +18,12 @@ public class Server {
 
     public Server(int port) {
         try {
+
             server = new ServerSocket(port);
             server.setReuseAddress(true);
 
             logger.info("Server started on port " + port);
+
 
             while (true) {
                 Socket client = server.accept();

@@ -20,9 +20,9 @@ public class Main extends Application {
      * @throws SQLException If a SQL exception occurs.
      */
     public static void main(String[] args) throws SQLException {
-        //TODO PORT
-        Server server = new Server(7245);
 
+        Config.loadConfig();
+        Server server = new Server(Config.SERVER_APP_PORT);
         launch(args);
     }
 
