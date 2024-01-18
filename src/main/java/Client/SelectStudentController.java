@@ -20,7 +20,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -94,6 +93,8 @@ public class SelectStudentController implements Initializable {
 
     /**
      * Handles the action when a student is chosen.
+     *
+     * @throws IOException if an I/O error occurs
      */
     public void chosenStudentOnAction() throws IOException {
         String selectedStudent = studentsList.getSelectionModel().getSelectedItem();

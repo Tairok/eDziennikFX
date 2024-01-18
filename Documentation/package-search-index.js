@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.demo","l":"Client"},{"m":"com.example.demo","l":"DbTools"},{"m":"com.example.demo","l":"DbTools.ClassTools"},{"m":"com.example.demo","l":"eDziennikFX"},{"m":"com.example.demo","l":"GuiTools"},{"m":"com.example.demo","l":"NetworkTools"}];updateSearchResults();
