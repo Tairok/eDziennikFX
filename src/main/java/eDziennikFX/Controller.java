@@ -2,6 +2,7 @@ package eDziennikFX;
 
 import Gui.GradeView;
 import Gui.GuiForm;
+import Gui.UserView;
 import javafx.application.Platform;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
@@ -16,6 +17,22 @@ public class Controller {
     public TableColumn<GradeView, String> gradeTitleColumn;
     public TableColumn<GradeView, String> gradeColumn;
     public TableColumn<GradeView, String> dateColumn;
+
+    public TableView<UserView> userTableView;
+    public TableColumn<UserView, String> idColumnAdmin;
+    public TableColumn<UserView, String> firstNameColumnAdmin;
+    public TableColumn<UserView, String> lastNameColumnAdmin;
+    public TableColumn<UserView, String> loginColumnAdmin;
+    public TableColumn<UserView, String> roleColumnAdmin;
+    @FXML
+    public TextField firstNameFieldAdmin;
+    public TextField lastNameFieldAdmin;
+    public TextField loginFieldAdmin;
+    public PasswordField passwordFieldAdmin;
+    public ComboBox<String> roleComboBoxAdmin;
+    public ComboBox<String> loginComboBoxAdmin;
+
+
     @FXML
     private ComboBox<String> subjectComboBox;
 
@@ -25,14 +42,59 @@ public class Controller {
     @FXML
     private DatePicker datePicker;
 
+
+
 //    @FXML
 //    private TableView<GradeView> gradeTableView;
 
     @FXML
     private void initialize() {
-        System.out.println("initialize");
+//        initializeStudent();
+        initializeTeacher();
+//        initializeAdmin();
+    }
 
-//        gradeTableView = new TableView<>();
+    private void initializeAdmin() {
+        System.out.println("initialize admin");
+//TODO opcjonalnie pobieraj role z bazy danych
+        roleComboBoxAdmin.getItems().addAll("admin", "teacher", "student");
+        //TODO pobieraj loginy userów z bazy danych
+        loginComboBoxAdmin.getItems().addAll("admin", "T-szer", "invincible");
+
+        idColumnAdmin = new TableColumn<>("ID");
+        idColumnAdmin.setCellValueFactory(cellData -> cellData.getValue().idProperty());
+
+        firstNameColumnAdmin = new TableColumn<>("First Name");
+        firstNameColumnAdmin.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
+
+        lastNameColumnAdmin = new TableColumn<>("Last Name");
+        lastNameColumnAdmin.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+
+        loginColumnAdmin = new TableColumn<>("Login");
+        loginColumnAdmin.setCellValueFactory(cellData -> cellData.getValue().loginProperty());
+
+        roleColumnAdmin = new TableColumn<>("Role");
+        roleColumnAdmin.setCellValueFactory(cellData -> cellData.getValue().roleProperty());
+
+        userTableView.getColumns().addAll(idColumnAdmin, firstNameColumnAdmin, lastNameColumnAdmin, loginColumnAdmin, roleColumnAdmin);
+
+        // TODO Pobierz userów z bazy danych
+        UserView user1 = new UserView("1", "Admin", "Adminson", "admin", "admin");
+        UserView user2 = new UserView("2", "Teacher", "Teacherson", "T-czer", "teacher");
+        UserView user3 = new UserView("3", "Mark", "Greyson", "invincible", "student");
+
+        ObservableList<UserView> userList = FXCollections.observableArrayList(
+                user1, user2, user3
+        );
+
+        userTableView.setItems(userList);
+
+        System.out.println("end initialize admin");
+    }
+
+
+    private void initializeStudent() {
+        System.out.println("initialize student");
 
         // Initialize TableView columns
         subjectColumn = new TableColumn<>("Subject");
@@ -50,7 +112,7 @@ public class Controller {
         // Add columns to the TableView
         gradeTableView.getColumns().addAll(subjectColumn, gradeTitleColumn, gradeColumn, dateColumn);
 
-        // TODO Add sample data (replace this with your actual data)
+        // TODO Pobierz oceny z bazy danych
         GradeView grade1 = new GradeView("Math", "Exam", "A", "2024-01-01");
         GradeView grade2 = new GradeView("Science", "Homework", "B", "2024-01-02");
 
@@ -60,7 +122,7 @@ public class Controller {
 
         gradeTableView.setItems(gradeList);
 
-        System.out.println("end initialize");
+        System.out.println("end initialize student");
     }
 
     @FXML
@@ -79,10 +141,19 @@ public class Controller {
     @FXML
     private void handleAddUser() {
         //TODO dodaj usera do bazy danych
+        String firstName = firstNameFieldAdmin.getText();
+        String lastName  = lastNameFieldAdmin.getText();
+        String username  = loginFieldAdmin.getText();
+        String password  = passwordFieldAdmin.getText();
+        String role      = roleComboBoxAdmin.getValue();
+
+        System.out.println("Dodaję użyszkodnika: " + firstName + ", " + lastName + ", " + username + ", " + role);
     }
 
     @FXML
     private void handleDeleteUser() {
+        String username = loginComboBoxAdmin.getValue();
+        System.out.println("Usuwam użyszkodnika: " + username);
         //TODO usuń usera z bazy danych
     }
 

@@ -33,16 +33,16 @@
                 <content>
                     <VBox alignment="CENTER" spacing="10">
                         <Label text="First Name" />
-                     <TextField maxWidth="250.0" prefWidth="150.0" />
+                     <TextField fx:id="firstNameFieldAdmin" maxWidth="250.0" prefWidth="150.0" />
                      <Label layoutX="113.0" layoutY="103.0" text="Last Name" />
-                     <TextField maxWidth="250.0" prefWidth="150.0" />
+                     <TextField fx:id="lastNameFieldAdmin" maxWidth="250.0" prefWidth="150.0" />
                         <Label text="Login" />
-                     <TextField maxWidth="250.0" prefWidth="150.0" />
+                     <TextField fx:id="loginFieldAdmin" maxWidth="250.0" prefWidth="150.0" />
                      <Label layoutX="117.0" layoutY="197.0" text="Password" />
-                     <PasswordField maxWidth="250.0" prefWidth="150.0" />
+                     <PasswordField fx:id="passwordFieldAdmin" maxWidth="250.0" prefWidth="150.0" />
                         <Label text="Role" />
-                     <ComboBox fx:id="gradeComboBox2" prefWidth="250.0" visibleRowCount="6" />
-                        <Button onAction="#handleAddGrade" text="Add User">
+                     <ComboBox fx:id="roleComboBoxAdmin" prefWidth="250.0" visibleRowCount="6" />
+                        <Button onAction="#handleAddUser" text="Add User">
                         <padding>
                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                         </padding></Button>
@@ -53,14 +53,14 @@
             <Tab text="View Users">
                 <content>
                     <VBox alignment="CENTER" spacing="10">
-                        <TableView fx:id="diaryTableView">
-                            <columns>
-                                <TableColumn fx:id="subjectColumn" text="ID" />
-                                <TableColumn fx:id="gradeColumn" text="First Name" />
-                                <TableColumn fx:id="dateColumn" text="Last Name" />
-                           <TableColumn fx:id="gradeColumn1" text="Login" />
-                           <TableColumn fx:id="gradeColumn11" text="Role" />
-                            </columns>
+                        <TableView fx:id="userTableView">
+<!--                            <columns>-->
+<!--                                <TableColumn fx:id="idColumnAdmin" text="ID" />-->
+<!--                                <TableColumn fx:id="firstNameColumnAdmin" text="First Name" />-->
+<!--                                <TableColumn fx:id="lastNameColumnAdmin" text="Last Name" />-->
+<!--                           <TableColumn fx:id="loginColumnAdmin" text="Login" />-->
+<!--                           <TableColumn fx:id="roleColumnAdmin" text="Role" />-->
+<!--                            </columns>-->
                         </TableView>
                     </VBox>
                 </content>
@@ -70,8 +70,8 @@
                   <VBox alignment="CENTER" spacing="10">
                      <children>
                         <Label text="Login" />
-                        <ComboBox fx:id="subjectComboBox1" prefWidth="150" />
-                        <Button onAction="#handleAddGrade" text="Delete User">
+                        <ComboBox fx:id="loginComboBoxAdmin" prefWidth="150" />
+                        <Button onAction="#handleDeleteUser" text="Delete User">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>

@@ -6,8 +6,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class GradeView {
-//    extends
-//} VBox {
 
     private final StringProperty subject = new SimpleStringProperty();
     private final StringProperty gradeTitle = new SimpleStringProperty();
@@ -64,21 +62,4 @@ public class GradeView {
     public StringProperty dateProperty() {
         return date;
     }
-
-//    private Label subjectLabel;
-//    private Label gradeLabel;
-//    private Label dateLabel;
-//
-//    public GradeView(String subject, String grade, String date) {
-//        // Initialize UI components
-//        subjectLabel = new Label("Subject: " + subject);
-//        gradeLabel = new Label("Grade: " + grade);
-//        dateLabel = new Label("Date: " + date);
-//
-//        // Add components to the layout
-//        getChildren().addAll(subjectLabel, gradeLabel, dateLabel);
-//
-//        // Add styling or additional customization if needed
-//        // For example, you might set styles, fonts, or spacing here.
-//    }
 }
