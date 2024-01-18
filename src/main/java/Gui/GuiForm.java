@@ -5,8 +5,10 @@ package Gui;
 import GuiTools.User;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 /**
@@ -52,9 +55,7 @@ public class GuiForm {
                     {
                         System.out.println("Login successful");
 
-                        Stage stage = new Stage();
-//                        stage.setTitle("Panel");
-                        setStage((usernameInput.getText()), stage);
+                        setStage(usernameInput.getText());
 
                         // Hide this current window (if this is what you want)
                         ((Node)(e.getSource())).getScene().getWindow().hide();
@@ -63,6 +64,8 @@ public class GuiForm {
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
             }
@@ -77,25 +80,36 @@ public class GuiForm {
     }
 
 
-    private void setStage(String username, Stage stage) throws SQLException, ClassNotFoundException {
+    private void setStage(String username) throws SQLException, ClassNotFoundException, IOException {
         // GET roleName of USER from database
 
         //testing roleName
 //        String roleName = "admin";
 //        String roleName = "teacher";
-        String roleName = "student";
+//        String roleName = "student";
+        String title = null, fxmlFilename = null;
 
-        switch (roleName) {
-            case "admin" -> {
-                stage.setTitle("Panel Administratora");
+        switch (username) {
+            case "a" -> {
+                title = "Panel Administratora";
+                fxmlFilename = "/eDziennikFX/panelAdmin.fxml";
             }
-            case "teacher" -> {
-                stage.setTitle("Panel Nauczyciela");
+            case "t" -> {
+                title = "Panel Nauczyciela";
+                fxmlFilename = "/eDziennikFX/panelTeacher.fxml";
             }
-            case "student" -> {
-                stage.setTitle("Panel Ucznia");
+            case "s" -> {
+                title = "Panel Ucznia";
+                fxmlFilename = "/eDziennikFX/panelStudent.fxml";
             }
+
+            default -> throw new IllegalStateException("Unexpected value: " + username);
         }
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFilename));
+        Parent root = fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root));
         stage.show();
     }
 

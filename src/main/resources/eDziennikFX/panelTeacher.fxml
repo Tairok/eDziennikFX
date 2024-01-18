@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eDziennikFX.Controller">
+
+<top>
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem onAction="#handleExit" text="Exit" />
+        </Menu>
+    </MenuBar>
+</top>
+
+<center>
+    <TabPane>
+        <tabs>
+            <Tab text="Enter Grades">
+                <content>
+                    <VBox alignment="CENTER" spacing="10">
+                        <Label text="Subject:" />
+                        <ComboBox fx:id="subjectComboBox" prefWidth="150" />
+                     <Label layoutX="113.0" layoutY="103.0" text="Student" />
+                     <ComboBox fx:id="subjectComboBox1" layoutX="59.0" layoutY="131.0" prefWidth="150" />
+                        <Label text="Grade:" />
+                        <ComboBox fx:id="gradeComboBox" prefWidth="150" visibleRowCount="6" />
+                     <Label layoutX="117.0" layoutY="197.0" text="Grade title:" />
+                     <TextField maxWidth="150.0" prefWidth="150.0" />
+                        <Label text="Date:" />
+                        <DatePicker fx:id="datePicker" />
+                        <Button onAction="#handleAddGrade" text="Add Grade" />
+                    </VBox>
+                </content>
+            </Tab>
+
+            <Tab text="View Grades">
+                <content>
+                    <VBox alignment="CENTER" spacing="10">
+                        <TableView fx:id="diaryTableView">
+                            <columns>
+                                <TableColumn fx:id="subjectColumn" text="Subject" />
+                           <TableColumn fx:id="gradeColumn1" text="Grade Title" />
+                                <TableColumn fx:id="gradeColumn" text="Grade" />
+                                <TableColumn fx:id="dateColumn" text="Date" />
+                           <TableColumn fx:id="dateColumn1" text="Student First Name" />
+                           <TableColumn fx:id="dateColumn11" text="Student Last Name" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</center>
+
+</BorderPane>
