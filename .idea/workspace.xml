@@ -10,16 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e5db624-ad7d-4e74-8d18-815b17df4b10" name="Changes" comment="ustabilizowana komunikacja za pomocą gniazd, serializacja danych">
-      <change afterPath="$PROJECT_DIR$/Config.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eDziennikFX/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/myapp.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/myapp.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DbTools/ClassTools/QueryTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DbTools/ClassTools/QueryTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DbTools/Config.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eDziennikFX/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eDziennikFX/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eDziennikFX/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eDziennikFX/Server.java" afterDir="false" />
-    </list>
+    <list default="true" id="8e5db624-ad7d-4e74-8d18-815b17df4b10" name="Changes" comment="ustabilizowana komunikacja za pomocą gniazd, serializacja danych" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,11 +55,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Config-dev",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Materialy/studia_2/Semestr3/PO2/eDziennikFX/libs/mysql-connector-j-8.2.0.jar",
+    "last_opened_file_path": "D:/Materialy/studia_2/Semestr3/PO2/eDziennikFXold2",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.49310344",
@@ -124,7 +115,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
       </set>
     </attachedChunks>
   </component>

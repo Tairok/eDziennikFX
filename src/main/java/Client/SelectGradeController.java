@@ -50,29 +50,46 @@ public class SelectGradeController implements Initializable {
      * Handles the action when a subject is chosen.
      */
     public void chosenSubjectOnAction() {
-        logger.info("Selected subject: {}", Arrays.toString(subjects.get(0)));
+        System.out.println(Arrays.toString(subjects.get(0)));
         gradesList.getItems().clear();
         String selectedSubject = subjectsList.getSelectionModel().getSelectedItem();
 
         for (Object[] o : subjects) {
             if (o[1].equals(selectedSubject)) {
-                String subjectsQuery = "SELECT * FROM grades_tbl WHERE fk_id_user_grades_tbl = " +
-                        User.selectedStudentID + " AND fk_id_subject_grades_tbl = " + o[0];
-                subjects = (List<Object[]>) (handler.sendMessage(subjectsQuery, PacketType.QUERY).getPayload());
-                for (Object[] s : subjects) {
+                String subjectsQuery = "SELECT * FROM grades_tbl WHERE fk_id_user_grades_tbl = " + User.selectedStudentID + " AND fk_id_subject_grades_tbl = " + o[0];
+                grades = (List<Object[]>) (handler.sendMessage(subjectsQuery, PacketType.QUERY).getPayload());
+                for (Object[] s : grades) {
                     if (o[1].equals(selectedSubject)) {
-                        gradesList.getItems().add(new String(s[1] + " - " + s[3] + " Wystawiono: " + s[2]));
+                        gradesList.getItems().add(new String("Ocena: " + s[1] + " -> " + s[3] + " Wystawiono: " + s[2]));
                         gradesList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
                             @Override
                             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                                // Action on item selection change (commented out).
+                            /*try {
+                                chosenStudentOnAction();
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }*/
                             }
                         });
                     }
+                    gradesList.getItems().add(new String("Dodaj ocene..."));
+                    gradesList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+                        @Override
+                        public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                            /*try {
+                                chosenStudentOnAction();
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }*/
+                        }
+                    });
                     break;
                 }
+
             }
+
         }
+
     }
 
     @FXML
