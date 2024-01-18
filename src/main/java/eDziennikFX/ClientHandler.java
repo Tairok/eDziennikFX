@@ -16,7 +16,7 @@ import GuiTools.User;
 import NetworkTools.*;
 
 /**
- * The ClientHandler class manages communication with a client on the server side.
+ * The {@code ClientHandler} class manages communication with a client on the server side.
  */
 public class ClientHandler implements Runnable {
 
@@ -29,7 +29,7 @@ public class ClientHandler implements Runnable {
     private static final AtomicInteger clientIDCounter = new AtomicInteger(0);
 
     /**
-     * Initializes a new ClientHandler for a client connection.
+     * Initializes a new {@code ClientHandler} for a client connection.
      *
      * @param socket The Socket representing the client connection.
      */

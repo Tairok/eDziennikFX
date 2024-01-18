@@ -1,0 +1,18 @@
+20:11:59.463 [main] INFO  eDziennikFX.Server - Server started on port 7245
+20:12:02.226 [JavaFX Application Thread] INFO  Client.Main - Client application started.
+20:12:35.088 [JavaFX Application Thread] INFO  Client.ConnectController - Quit button clicked.
+20:12:35.102 [main] INFO  Client.Main - Client application exiting.
+20:20:57.082 [main] INFO  eDziennikFX.Server - Server started on port 7245
+20:21:04.081 [JavaFX Application Thread] INFO  Client.Main - Client application started.
+20:21:13.211 [JavaFX Application Thread] INFO  Client.ConnectController - Connect button clicked.
+20:21:13.213 [main] INFO  eDziennikFX.Server - Accepted connection from 127.0.0.1
+20:21:13.215 [JavaFX Application Thread] INFO  Client.ConnectionHandler - Connected to server: 127.0.0.1:7245 - CONNECTED!
+20:21:13.217 [main] INFO  eDziennikFX.ClientHandler - New client ID: 0 IP: 127.0.0.1 - CONNECTED
+20:21:13.257 [JavaFX Application Thread] INFO  Client.ConnectController - Connection established to localhost:7245
+20:21:20.008 [JavaFX Application Thread] INFO  Client.LoginController - User Admin logged in. UserID: 3, Role: admin
+20:21:21.210 [JavaFX Application Thread] INFO  Client.SelectStudentController - Logged out. Navigated to clientLogin.fxml
+20:21:22.311 [JavaFX Application Thread] INFO  Client.ConnectionHandler - Connection closed.
+20:21:22.311 [JavaFX Application Thread] INFO  Client.LoginController - User Admin disconnected.
+20:21:22.311 [Thread-2] ERROR eDziennikFX.ClientHandler - Error in client handling: null
+20:21:22.716 [JavaFX Application Thread] INFO  Client.ConnectController - Quit button clicked.
+20:21:22.733 [main] INFO  Client.Main - Client application exiting.
