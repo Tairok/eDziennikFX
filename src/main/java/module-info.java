@@ -9,6 +9,7 @@ module com.example.demo {
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
     requires mysql.connector.j;
+    requires org.apache.logging.log4j.core;
 
 
     opens eDziennikFX to javafx.fxml;

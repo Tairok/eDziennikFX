@@ -6,18 +6,22 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO in development
+
 public class QueryTools {
     /**
-     * Query builders - used to build queries from strings
+     * The QueryTools class provides utility methods for building and executing SQL queries.
+     * It includes methods for creating INSERT, UPDATE, and DELETE queries, as well as auxiliary functions
+     * for printing query results and obtaining information about database tables.
      */
 
     /**
+     * Builds and returns an SQL INSERT query for the specified table, columns, and values.
      *
-     * @param table - name of table
-     * @param values - Object table that contains data for query - String table that contains names of columns in table
-     * @return
-     * @throws SQLException
+     * @param table   The name of the table.
+     * @param columns An array of column names.
+     * @param values  An array of corresponding values for the columns.
+     * @return The generated SQL INSERT query.
+     * @throws SQLException If a database access error occurs.
      */
     protected static String insertBuilder(String table,String[] columns,Object[] values) throws SQLException
     {
@@ -38,12 +42,13 @@ public class QueryTools {
     }
 
     /**
+     * Builds and returns an SQL INSERT query for the specified table, column, and value.
      *
-     * @param table - name of table
-     * @param column
-     * @param value
-     * @return
-     * @throws SQLException
+     * @param table  The name of the table.
+     * @param column The name of the column.
+     * @param value  The value to be inserted.
+     * @return The generated SQL INSERT query.
+     * @throws SQLException If a database access error occurs.
      */
     protected static String insertBuilder(String table,String column,Object value) throws SQLException
     {
@@ -52,12 +57,12 @@ public class QueryTools {
     }
 
     /**
+     * Builds and returns an SQL UPDATE query for the specified table, columns, and values.
      *
-     * @param table - name of table
-     * @param values - Object table that contains data for query - String table that contains names of columns in table
-     * @param values
-     * @param condition - Condition witch must be fullfilled by query (SQL WHERE clause)
-     * @return
+     * @param table   The name of the table.
+     * @param columns An array of column names.
+     * @param values  An array of corresponding values for the columns.
+     * @return The generated SQL UPDATE query.
      */
     protected static String updateBuilder(String table,String[] columns,Object[] values)
     {
@@ -72,10 +77,10 @@ public class QueryTools {
     }
 
     /**
+     * Builds and returns an SQL DELETE query for the specified table.
      *
-     * @param table - name of table
-     * @param condition - Condition witch must be fullfilled by query (SQL WHERE clause)
-     * @return
+     * @param table The name of the table.
+     * @return The generated SQL DELETE query.
      */
     protected static String deleteBuilder(String table)
     {
@@ -86,10 +91,12 @@ public class QueryTools {
 
 
 
-    /**
-     * Optional functions for diagnosis
-     */
 
+    /**
+     * Prints the result of a SELECT query, provided as a List of Object arrays.
+     *
+     * @param resultTab The List containing Object arrays representing the query result.
+     */
     public static void printSelect(List<Object[]> resultTab)
     {
         for(Object[] objects : resultTab)
@@ -101,14 +108,11 @@ public class QueryTools {
 
 
     /**
-     * auxiliary functions, for use inside class or inheritance
-     */
-
-    /**
+     * Retrieves the next auto-incremented ID for the specified table.
      *
-     * @param table - name of table - name of table
-     * @return - returns the next id (auto-increment)
-     * @throws SQLException
+     * @param table The name of the table.
+     * @return The next auto-incremented ID.
+     * @throws SQLException If a database access error occurs.
      */
     protected static Integer getNextId(String table) throws SQLException
     {
@@ -136,10 +140,11 @@ public class QueryTools {
     }
 
     /**
+     * Retrieves the name of the primary key column (ID column) for the specified table.
      *
-     * @param table - name of table
-     * @return
-     * @throws SQLException
+     * @param table The name of the table.
+     * @return The name of the primary key column.
+     * @throws SQLException If a database access error occurs.
      */
     protected static String getIdName(String table) throws SQLException
     {
@@ -161,7 +166,13 @@ public class QueryTools {
         return id;
     }
 
-    //TODO do generic function
+    /**
+     * Executes a boolean query and returns the result.
+     *
+     * @param query The boolean query to be executed.
+     * @return true if the query is successful, false otherwise.
+     * @throws SQLException If a database access error occurs.
+     */
     protected static boolean sendBooleanQuery(String query) throws SQLException
     {
         try(Connection con = DriverManager.getConnection(Config.DB_URL,Config.DB_USER,Config.DB_PASSWORD))
@@ -183,6 +194,14 @@ public class QueryTools {
         return false;
     }
 
+    /**
+     * Executes a query and returns the result as a List of Object arrays.
+     *
+     * @param query The query to be executed.
+     * @return A List of Object arrays representing the query result.
+     * @throws SQLException              If a database access error occurs.
+     * @throws ClassNotFoundException    If the class definition for the driver is not found.
+     */
     protected static List<Object[]>  sendResultQuery(String query) throws SQLException, ClassNotFoundException {
 
         List<Object[]> resTab = new ArrayList<>();

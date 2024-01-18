@@ -1,88 +1,103 @@
 package eDziennikFX;
 
-import java.io.*;
-import java.net.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import DbTools.Query;
 import GuiTools.User;
 import NetworkTools.*;
 
+/**
+ * The ClientHandler class manages communication with a client on the server side.
+ */
 public class ClientHandler implements Runnable {
+
+    private static final Logger logger = LogManager.getLogger(ClientHandler.class.getName());
+
     private Socket clientSocket = null;
     private ObjectOutputStream outputStream = null;
     private ObjectInputStream inputStream = null;
     private int clientID;
-    private static int clientIDCounter = 0;
+    private static final AtomicInteger clientIDCounter = new AtomicInteger(0);
 
-    public ClientHandler(Socket socket){
+    /**
+     * Initializes a new ClientHandler for a client connection.
+     *
+     * @param socket The Socket representing the client connection.
+     */
+    public ClientHandler(Socket socket) {
         clientSocket = socket;
         clientID = nextID();
-        System.out.println("Nowy klient ID: " + clientID + " IP: " + socket.getInetAddress().getHostAddress() + " - POLACZONO");
+        logger.info("New client ID: " + clientID + " IP: " + socket.getInetAddress().getHostAddress() + " - CONNECTED");
     }
 
     @Override
-    public void run(){
-        try{
+    public void run() {
+        try {
             outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
             inputStream = new ObjectInputStream(clientSocket.getInputStream());
 
             Packet packet = null;
 
-            do{
+            do {
                 packet = (Packet) inputStream.readObject();
-                switch(packet.getType()){
+                switch (packet.getType()) {
                     case QUERY:
-                        List<Object[]> data = Query.select((String)packet.getPayload());
+                        List<Object[]> data = Query.select((String) packet.getPayload());
                         outputStream.writeObject(new Packet(PacketType.ARRAY, data));
                         break;
                     case ARRAY:
-
+                        // Handle ARRAY packet type if needed
                         break;
                     case ERROR_MSG:
-
+                        // Handle ERROR_MSG packet type if needed
                         break;
                     case LOGIN_MSG:
                         String[] loginData = ((String) (packet.getPayload())).split("\n", 2);
                         Object[] user = User.checkUser(loginData[0], loginData[1]);
-                        if(user != null){
+                        if (user != null) {
                             outputStream.writeObject(new Packet(PacketType.ARRAY, user));
-                        }
-                        else{
+                        } else {
                             outputStream.writeObject(new Packet(PacketType.ERROR_MSG, null));
                         }
                         break;
                 }
 
-            }while(packet.getType() != PacketType.END_MSG);
+            } while (packet.getType() != PacketType.END_MSG);
 
-            System.out.println("Klient ID: " + clientID + " - ROZLACZONO!");
+            logger.info("Client ID: " + clientID + " - DISCONNECTED");
 
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-        catch(ClassNotFoundException e){
-            e.printStackTrace();
+        } catch (IOException | ClassNotFoundException e) {
+            logger.error("Error in client handling: " + e.getMessage());
         } catch (SQLException e) {
+            logger.error("SQL error in client handling: " + e.getMessage());
             throw new RuntimeException(e);
         } finally {
-            try{
-                if(outputStream != null){
+            try {
+                if (outputStream != null) {
                     outputStream.close();
                 }
-                if(inputStream != null){
+                if (inputStream != null) {
                     inputStream.close();
+                }
+                if (clientSocket != null) {
                     clientSocket.close();
                 }
-            }catch(IOException e){
-                e.printStackTrace();
+            } catch (IOException e) {
+                logger.error("Error while closing resources: " + e.getMessage());
             }
         }
-
     }
 
-    private static int nextID(){
-        return clientIDCounter++;
+    private int nextID() {
+        return clientIDCounter.getAndIncrement();
     }
 }

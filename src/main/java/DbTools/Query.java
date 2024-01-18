@@ -1,92 +1,83 @@
 package DbTools;
 
 import DbTools.ClassTools.QueryTools;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.List;
 
-public class Query extends QueryTools
-{
+/**
+ * The {@code Query} class provides basic CRUD operations on a database using JDBC.
+ */
+public class Query extends QueryTools {
+
+    private static final Logger logger = LogManager.getLogger(Query.class.getName());
+
     /**
-     * Class that provides basic CRUD operations on db
+     * Executes a SELECT query and returns the result set.
+     *
+     * @param queryStr The SELECT query string.
+     * @return A list of Object arrays representing the query results.
+     * @throws SQLException            If a database access error occurs.
+     * @throws ClassNotFoundException If the JDBC driver class is not found.
      */
-
-
-
-    /**
-     * 
-     * @param queryStr
-     * @return
-     * @throws SQLException
-     * @throws ClassNotFoundException
-     */
-    public static List<Object[]> select(String queryStr) throws SQLException, ClassNotFoundException
-    {
-
+    public static List<Object[]> select(String queryStr) throws SQLException, ClassNotFoundException {
         StringBuilder qr = new StringBuilder(queryStr);
         return QueryTools.sendResultQuery(String.valueOf(qr));
     }
 
     /**
-     * 
-     * @param table - name of table
-     * @param values - Object table that contains data for query - String table that contains names of columns in table
-     * @param values
-     * @return
-     * @throws SQLException
+     * Inserts data into the specified table.
+     *
+     * @param table   The name of the table.
+     * @param columns An array of column names.
+     * @param values  An array of values to be inserted.
+     * @return True if the insertion is successful, false otherwise.
+     * @throws SQLException If a database access error occurs.
      */
-    public static boolean insert(String table,String[] columns,Object[] values) throws SQLException
-    {
-        String queryStr = insertBuilder(table,columns,values);
+    public static boolean insert(String table, String[] columns, Object[] values) throws SQLException {
+        String queryStr = insertBuilder(table, columns, values);
         return QueryTools.sendBooleanQuery(queryStr);
     }
 
     /**
-     * 
-     * @param table - name of table
-     * @param column
-     * @param value
-     * @return
-     * @throws SQLException
+     * Inserts a single value into the specified column of the table.
+     *
+     * @param table  The name of the table.
+     * @param column The name of the column.
+     * @param value  The value to be inserted.
+     * @return True if the insertion is successful, false otherwise.
+     * @throws SQLException If a database access error occurs.
      */
-    public static boolean insert(String table,String column,Object value) throws SQLException {
-
-        String queryStr = insertBuilder(table,column,value);
+    public static boolean insert(String table, String column, Object value) throws SQLException {
+        String queryStr = insertBuilder(table, column, value);
         return QueryTools.sendBooleanQuery(queryStr);
     }
 
     /**
-     * 
-     * @param table - name of table
-     * @param values - Object table that contains data for query - String table that contains names of columns in table
-     * @param values
-     * @return
-     * @throws SQLException
+     * Updates data in the specified table.
+     *
+     * @param table   The name of the table.
+     * @param columns An array of column names.
+     * @param values  An array of new values.
+     * @return True if the update is successful, false otherwise.
+     * @throws SQLException If a database access error occurs.
      */
-    public static boolean update(String table,String[] columns,Object[] values) throws SQLException {
-       String queryStr = updateBuilder(table, columns,values);
-       return QueryTools.sendBooleanQuery(queryStr);
-    }
-
-    /**
-     * 
-     * @param table - name of table
-     * @return
-     * @throws SQLException
-     */
-    public static boolean delete(String table) throws SQLException
-    {
-        String  queryStr = deleteBuilder(table);
+    public static boolean update(String table, String[] columns, Object[] values) throws SQLException {
+        String queryStr = updateBuilder(table, columns, values);
         return QueryTools.sendBooleanQuery(queryStr);
     }
 
-
-
-
-
-
-
-
-
-
+    /**
+     * Deletes all records from the specified table.
+     *
+     * @param table The name of the table.
+     * @return True if the deletion is successful, false otherwise.
+     * @throws SQLException If a database access error occurs.
+     */
+    public static boolean delete(String table) throws SQLException {
+        String queryStr = deleteBuilder(table);
+        return QueryTools.sendBooleanQuery(queryStr);
+    }
 }
