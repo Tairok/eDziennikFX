@@ -1,6 +1,5 @@
 package eDziennikFX;
 
-import Gui.LoginForm;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -14,8 +13,8 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 
 
-        //Server server = new Server(7245);
-        try
+        Server server = new Server(7245);
+        /*try
         {
             Config.clearDB(); //clear whole db!, drop all tables !!!!
 
@@ -23,7 +22,7 @@ public class Main extends Application {
         }
         catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
 
 
         launch(args);
@@ -34,7 +33,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
 
         //create gui
-        LoginForm form = new LoginForm(stage);
+        //LoginForm form = new LoginForm(stage);
 
     }
 }

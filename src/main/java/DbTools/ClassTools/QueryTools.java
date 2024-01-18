@@ -84,20 +84,6 @@ public class QueryTools {
         return qr.toString();
     }
 
-    //TODO create tables with columns
-    protected static String createBuilder(String type,String name)
-    {
-        if(type.equals("table")) return "CREATE OR REPLACE TABLE '"+name+"';";
-        else if(type.equals("db")) return "CREATE OR REPLACE DATABASE '"+name+"';";
-        else return null;
-    }
-
-    protected static String dropBuilder(String type,String name)
-    {
-        if(type.equals("table")) return "DROP TABLE '"+name+"';";
-        else if(type.equals("db")) return "DROP DATABASE '"+name+"';";
-        else return null;
-    }
 
 
     /**
@@ -198,7 +184,7 @@ public class QueryTools {
     }
 
     protected static List<Object[]>  sendResultQuery(String query) throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+
         List<Object[]> resTab = new ArrayList<>();
         try(Connection con = DriverManager.getConnection(Config.DB_URL,Config.DB_USER,Config.DB_PASSWORD))
         {
@@ -209,8 +195,8 @@ public class QueryTools {
 
                 while (res.next())
                 {
-                    Object[] tmp = new Object[meta.getColumnCount()-1];
-                    for (int i = 1; i < meta.getColumnCount() ; i++) {
+                    Object[] tmp = new Object[meta.getColumnCount()];
+                    for (int i = 1; i <= meta.getColumnCount() ; i++) {
                         tmp[i-1] = res.getObject(i);
                     }
                     resTab.add(tmp);

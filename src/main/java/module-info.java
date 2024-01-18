@@ -17,4 +17,7 @@ module com.example.demo {
     opens DbTools to javafx.fxml;
     exports DbTools.ClassTools;
     opens DbTools.ClassTools to javafx.fxml;
+    opens Client to javafx.fxml;
+    exports Client;
+
 }

@@ -2,7 +2,11 @@ package eDziennikFX;
 
 import java.io.*;
 import java.net.*;
+import java.sql.SQLException;
 import java.util.*;
+
+import DbTools.Query;
+import GuiTools.User;
 import NetworkTools.*;
 
 public class ClientHandler implements Runnable {
@@ -30,13 +34,24 @@ public class ClientHandler implements Runnable {
                 packet = (Packet) inputStream.readObject();
                 switch(packet.getType()){
                     case QUERY:
-
+                        List<Object[]> data = Query.select((String)packet.getPayload());
+                        outputStream.writeObject(new Packet(PacketType.ARRAY, data));
                         break;
                     case ARRAY:
 
                         break;
                     case ERROR_MSG:
 
+                        break;
+                    case LOGIN_MSG:
+                        String[] loginData = ((String) (packet.getPayload())).split("\n", 2);
+                        Object[] user = User.checkUser(loginData[0], loginData[1]);
+                        if(user != null){
+                            outputStream.writeObject(new Packet(PacketType.ARRAY, user));
+                        }
+                        else{
+                            outputStream.writeObject(new Packet(PacketType.ERROR_MSG, null));
+                        }
                         break;
                 }
 
@@ -49,8 +64,9 @@ public class ClientHandler implements Runnable {
         }
         catch(ClassNotFoundException e){
             e.printStackTrace();
-        }
-        finally {
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
             try{
                 if(outputStream != null){
                     outputStream.close();

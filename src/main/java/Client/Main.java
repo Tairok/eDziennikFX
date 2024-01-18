@@ -1,17 +1,26 @@
 package Client;
 
-import java.util.Scanner;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
-public class Main {
+import java.io.IOException;
+
+public class Main extends Application {
+
+    @Override
+    public void start(Stage clientStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientConnect.fxml"));
+        clientStage.initStyle(StageStyle.UNDECORATED);
+        clientStage.setTitle("Łączenie z serwerem");
+        clientStage.setScene(new Scene(root, 600, 400));
+        clientStage.show();
+    }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Podaj adres: ");
-        String adres = sc.nextLine();
-        System.out.println("Podaj port");
-        int port = sc.nextInt();
-
-        ConnectionHandler ch = new ConnectionHandler(adres, port);
+        launch(args);
 
 
 

@@ -4,5 +4,6 @@ public enum PacketType {
     QUERY,
     ARRAY,
     ERROR_MSG,
-    END_MSG
+    END_MSG,
+    LOGIN_MSG
 }

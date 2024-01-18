@@ -11,26 +11,6 @@ public class Query extends QueryTools
      * Class that provides basic CRUD operations on db
      */
 
-    public static boolean createTable(String tablename) throws SQLException {
-        String queryStr = createBuilder("table",tablename);
-        return  QueryTools.sendBooleanQuery(queryStr);
-    }
-
-
-    public static boolean createDatabase(String dbname) throws SQLException {
-        String queryStr = createBuilder("db",dbname);
-        return  QueryTools.sendBooleanQuery(queryStr);
-    }
-
-    public static boolean dropTable(String table) throws SQLException {
-        String queryStr = dropBuilder("table",table);
-        return QueryTools.sendBooleanQuery(queryStr);
-    }
-
-    public static boolean dropDatabase(String dbname) throws SQLException {
-        String queryStr = dropBuilder("db",dbname);
-        return  QueryTools.sendBooleanQuery(queryStr);
-    }
 
 
     /**
@@ -42,7 +22,7 @@ public class Query extends QueryTools
      */
     public static List<Object[]> select(String queryStr) throws SQLException, ClassNotFoundException
     {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+
         StringBuilder qr = new StringBuilder(queryStr);
         return QueryTools.sendResultQuery(String.valueOf(qr));
     }
